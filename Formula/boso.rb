@@ -1,14 +1,14 @@
 class Boso < Formula
   desc "Boso AI — self-hosted coding agent. Your box, your model."
   homepage "https://boso.com"
-  url "https://ai.boso.com/releases/boso-0.0.21.pyz"
-  sha256 "a2a89f22c77f0ce5dba4ee82f54b9433f768c56fcd9915d29515bae4934e366a"
-  version "0.0.21"
+  url "https://ai.boso.com/releases/boso-0.1.0.pyz"
+  sha256 "eab971bf9fa5a8b7315725c89b1a0d132f0bfdf6c1c855bc2cbf34c414fce331"
+  version "0.1.0"
 
   depends_on "python@3.12"
 
   def install
-    libexec.install "boso-0.0.21.pyz" => "boso.pyz"
+    libexec.install "boso-0.1.0.pyz" => "boso.pyz"
     (bin/"boso").write <<~SH
       #!/usr/bin/env sh
       exec "#{Formula["python@3.12"].opt_bin}/python3.12" "#{libexec}/boso.pyz" "$@"
